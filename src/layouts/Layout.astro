@@ -1,0 +1,91 @@
+---
+interface Props {
+	title: string;
+}
+import { Icon } from 'astro-icon/components'
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white-600">
+		<div>
+			<div class="flex justify-between border-b-2 px-[10%] text-slate-500 text-sm items-center font-semibold">
+				<div>Desarrollado por Santiago</div>
+				<div class="flex">
+					<ul class="border-l-2 px-4"><Icon name="mdi:record-circle" /></ul>
+					<ul class="border-l-2 px-4"><Icon name="mdi:heart" /></ul>
+					<ul class="border-l-2 px-4"><Icon name="mdi:local-grocery-store" /></ul>
+					<ul class="border-l-2 px-4"><Icon name="mdi:secure" /></ul>
+				</div>
+			</div>
+
+			<div class="mt-16">
+				<div class="flex gap-64 justify-center items-center">
+					<div class="relative w-[15%]">
+						<input placeholder="Type Keyword" class="font-mono h-6 pl-2 outline-none pb-2 pr-14 w-full border-b-2" >
+						<div class=" absolute inline-block text-slate-300 rounded-xl py-1 px-2">
+							<Icon name="mdi:search" class="size-6"/>
+						</div>
+					</div>
+					<div><img class="h-16" src="/public/vonia.jpg" alt=""></div>
+					<div class="flex justify-center items-center text-slate-500 font-semibold">
+						<Icon name="mdi:cart-outline" class="size-5"/>
+						<p class="px-4">0 Items - $0.00</p>
+					</div>
+				</div>
+				<div class="mt-8">
+					<nav class="flex gap-12 justify-center font-semibold text-slate-600">
+						<a href="">HOME</a>
+						<a href="">SHOP</a>
+						<a href="">BLOG</a>
+						<a href="">SERVICES</a>
+						<a href="">ABOUTUS</a>
+						<a href="">CONTACTUS</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-6 bg-[url('https://img.freepik.com/fotos-premium/diseno-interiores-sala-estar-minimalista-sofa-beige-mesita-auxiliar-accesorios-hogar-modernos-fondo-pantalla-copie-espacio-plantilla_431307-6951.jpg')]
+		h-[260px] bg-center bg-cover">
+			<div class="justify-items-center ml-48 w-48 grid grid-cols-1 gap-1 h-20">
+				<h1 class="text-[60px] text-white mt-4">Sale!</h1>
+				<h6 class="bg-pink-600 px-2 text-white font-thin">10% off all products</h6>
+				<a href="#" class="text-white border-2 p-1 text-[10px] w-20 mt-4">SHOP NOW</a>
+			</div>
+
+		</div>
+
+		<div class="flex justify-center gap-8 px-60 text-slate-600 py-12">
+			<div class="grid justify-items-center text-center">
+				<Icon name="mdi:cash" class="size-12"/>
+				<h1 class="font-semibold">100% MONEY BACK GUARANTEE</h1>
+				<p class="text-center text-slate-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor eaqu</p>
+			</div>
+			<div class="border-x-2 px-8 grid justify-items-center text-center">
+				<Icon name="mdi:car" class="size-12"/>
+				<h1 class="font-semibold">FREE SHOPPING ON ODER OVER 500$</h1>
+				<p class="text-center text-slate-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor eaqu</p>
+			</div >
+			<div class="text-center grid justify-items-center">
+				<Icon name="mdi:support" class="size-12"/>
+				<h1 class="font-semibold">ONLINE SUPPORT 24/7</h1>
+				<p class="text-center text-slate-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor eaqu</p>
+			</div>
+		</div>
+
+
+		<slot />
+	</body>
+</html>
+
